@@ -1,10 +1,10 @@
-=== Video Player Block - Ultimate Video Player For WP. ===
+=== Video Player Block - Ultimate Video Player For WordPress. ===
 Contributors: bplugins, abuhayat, charlescormier
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, video embed, any video play, video play, Gutenberg block
-Requires at least: 6.2+
-Tested up to: 6.6.2
-Stable tag: 1.0.5
+Requires at least: 6.5+
+Tested up to: 6.7
+Stable tag: 1.0.6
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -136,27 +136,8 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 == Changelog ==
 
-= 1.0.5 - 8 Jan 24 =
-* Fix autoplay
-
-= 1.0.4 =
-* Not loading the assets where the block is not added
-
-= 1.0.3 =
-* Add translate feature
-
-= 1.0.2 =
-* Reduce PHP Code
-* Performance Improvement
-
-= 1.0.1 =
-* Reduce PHP Code
-
-= 1.0.0 =
-* Initial Release
-
-
-== Upgrade Notice ==
+= 1.0.6 - 20 Nov 24 =
+* Fix multiple render issue
 
 = 1.0.5 - 8 Jan 24 =
 * Fix autoplay
