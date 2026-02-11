@@ -3,7 +3,7 @@ Contributors: bplugins, abuhayat, charlescormier
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, video embed, any video play, video play, Gutenberg block
 Requires at least: 6.5+
-Tested up to: 6.8
+Tested up to: 6.9
 Stable tag: 1.0.6
 Requires PHP: 7.1
 License: GPLv3 or later
@@ -149,8 +149,8 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 * Add translate feature
 
 = 1.0.2 =
-* Reduce PHP Code
-* Performance Improvement
+* Reduce PHP Code.
+* Performance Improvement.
 
 = 1.0.1 =
 * Reduce PHP Code.
