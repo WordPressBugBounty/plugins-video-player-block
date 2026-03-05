@@ -14,7 +14,7 @@
 if ( !defined( 'ABSPATH' ) ) { exit; }
 
 // Constant
-define( 'VPB_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.6' );
+define( 'VPB_VERSION', isset( $_SERVER['HTTP_HOST'] ) && ( 'localhost' === $_SERVER['HTTP_HOST'] || 'plugins.local' === $_SERVER['HTTP_HOST'] ) ? time() : '1.0.6' );
 define( 'VPB_DIR_URL', plugin_dir_url( __FILE__ ) );
 define( 'VPB_DIR_PATH', plugin_dir_path( __FILE__ ) );
 
