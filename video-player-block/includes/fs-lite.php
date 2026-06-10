@@ -1,35 +1,33 @@
 <?php
 if ( !defined( 'ABSPATH' ) ) { exit; }
 
- if (!function_exists('vgb_fs')) {
-        function vgb_fs() {
-            global $vgb_fs;
-
-            if (!isset($vgb_fs)) {
-                require_once VGB_DIR_PATH . 'vendor/freemius-lite/start.php';
-
-                $vgb_fs = fs_lite_dynamic_init([
-                    'id'                  => '20637',
-                    'slug'                => 'video-gallery-block',
-                    '__FILE__'            => VGB_DIR_PATH . 'index.php',
-                    'premium_slug'        => 'video-gallery-block-pro',
-                    'type'                => 'plugin',
-                    'public_key'          => 'pk_02d017aab6844d54db3238a59e91c',
-                    'is_premium'          => false,
-                    'premium_suffix'      => 'Pro',
-                    'has_premium_version' => true,
-                    'has_addons'          => false,
-                    'has_paid_plans'      => true,
-                    'menu'                => array(
-                        'slug'           => 'edit.php?post_type=video-gallery-block',
-                        'first-path'     => 'edit.php?post_type=video-gallery-block&page=vgb-help-demo#/welcome',
-                        'support'        => false,
-                    ),
-                ]); 
+ if (!function_exists('vpb_fs')) {
+        function vpb_fs() {
+            global $vpb_fs;
+            if (!isset($vpb_fs)) {
+                require_once VPBP_DIR_PATH . 'vendor/freemius-lite/start.php';
+                $vpb_fs = fs_lite_dynamic_init([
+                'id'                  => '20181',
+                'slug'                => 'video-player-block',
+                '__FILE__'            => VPBP_DIR_PATH . 'plugin.php',
+                'premium_slug'        => 'video-player-block-pro',
+                'type'                => 'plugin',
+                'public_key'          => 'pk_24433ae07b8acef1ebd1c99de9fa5',
+                'is_premium'          => false,
+                'premium_suffix'      => 'Pro',
+                'has_premium_version' => true,
+                'has_addons'          => false,
+                'has_paid_plans'      => true,
+                'is_org_compliant'    => true,
+                'menu'                => array(
+                    'slug'           => 'edit.php?post_type=video-player-block',
+                    'first-path'     => 'edit.php?post_type=video-player-block&page=vpbp-help-demo',
+                    'support'        => false,
+                ),
+                ]);
             }
-            return $vgb_fs;
+            return $vpb_fs;
         }
-
-        vgb_fs();
-        do_action('vgb_fs_loaded');
+        vpb_fs();
+        do_action('vpb_fs_loaded');
     }
