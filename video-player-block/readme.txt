@@ -13,7 +13,7 @@ Embed and play videos easily in the Gutenberg editor with a customizable and res
 
 == Description ==
 
-Video Player Block is a powerful and versatile WordPress plugin that lets you embed and play videos with style. Beyond the standard HTML5 player, it offers support for industry-leading engines like **React Video Player**, **Video.js**, and **Vidstack**, plus a full suite of Pro blocks — **Video Gallery**, **Playlist**, **Lightbox**, **Reels**, **Comparison**, **Testimonial Card**, and **Transcript** — making it the ultimate tool for professional video sites.
+Video Player Block is a powerful and versatile WordPress plugin that lets you embed and play videos with style. Beyond the standard HTML5 player, the Pro version unlocks industry-leading engines like **React Video Player**, **Video.js**, and **Vidstack**, plus a full suite of Pro blocks — **Video Gallery**, **Playlist**, **Lightbox**, **Reels**, **Comparison**, **Testimonial Card**, and **Transcript** — making it the ultimate tool for professional video sites.
 
 Whether you are showcasing YouTube, Vimeo, self-hosted MP4s, or external media from services like Amazon S3 or BunnyCDN, this plugin provides a clean, responsive, and highly customizable video experience directly within the Gutenberg editor.
 
@@ -180,8 +180,8 @@ This plugin uses the following third-party libraries:
 
 
 = Video Player Block by B Plugins =
-* **Source:** [https://github.com/bPlugins/video-player-block-free]
-* **License:** GPL-2.0-or-later – [https://www.gnu.org/licenses/gpl-2.0.html]
+* **Source:** [https://github.com/bPlugins/video-player-block-free](https://github.com/bPlugins/video-player-block-free)
+* **License:** GPL-2.0-or-later – [https://www.gnu.org/licenses/gpl-2.0.html](https://www.gnu.org/licenses/gpl-2.0.html)
 * **Purpose:** A Gutenberg block for embedding and playing videos with support for YouTube, Vimeo, and self-hosted HTML5 video files. Includes customizable controls, responsiveness, and various playback options.
 
 
@@ -276,13 +276,13 @@ Replace `123` with the ID of the Video Player post you have created via the **Vi
 = 2.0.0 - 10 Jun 2026 =
 * Add 7 new Pro video blocks: Video Gallery, Video Playlist, Video Lightbox, Video Reels, Video Comparison, Video Testimonial Card, and Video Transcript
 * Add HLS (.m3u8) and DASH (.mpd) streaming support
-* Add Mux video integration and external source support (Amazon S3, DigitalOcean Spaces, BunnyCDN)
+* Add Mux video integration and external source support (Amazon S3, Digital Ocean Spaces, BunnyCDN)
 * Add lazy loading, preloading, and Google Cast / Chromecast support
 * Improve player styling: custom aspect ratios, glassmorphism controls, advanced shadow and border options
 * General performance improvements and bug fixes
 
 = 1.0.6 - 20 Nov 2024 =
-* Fix multiple render issue
+* Fix multiple render issues
 * Add 3 new advanced video player blocks (React, Video.js, Vidstack)
 * Fix build error
 
@@ -293,7 +293,7 @@ Replace `123` with the ID of the Video Player post you have created via the **Vi
 * Not loading the assets where the block is not added
 
 = 1.0.3 - 1 Aug 2023 =
-* Add translate feature
+* Add a translate feature
 
 = 1.0.2 - 1 Jun 2023 =
 * Reduce PHP Code.
