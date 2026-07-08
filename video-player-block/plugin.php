@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Video Player Block
  * Description: A Simple, accessible, Easy to Use & fully Customizable video player. 
- * Version: 2.0.0
+ * Version: 2.1.1
  * Requires at least: 6.5
  * Tested up to: 7.0
  * Requires PHP: 7.4
@@ -25,13 +25,14 @@ if (function_exists('vpb_fs')) {
 } else {
 
 // Constants
-define('VPBP_PLUGIN_VERSION', (isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] === 'localhost') ? time() : '2.0.0');
+define('VPBP_PLUGIN_VERSION', (isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] === 'localhost') ? time() : '2.1.1');
 define('VPBP_DIR_URL', plugin_dir_url(__FILE__));
 define('VPBP_PUBLIC_DIR', VPBP_DIR_URL . 'public/');
 define('VPBP_DIR_PATH', plugin_dir_path(__FILE__));
 
 require_once VPBP_DIR_PATH . '/includes/fs-lite.php';
 require_once VPBP_DIR_PATH . '/includes/rootPlugin/plugin.php';
+require_once VPBP_DIR_PATH . '/includes/Onboarding.php';
 
 // Main plugin class
 if (!class_exists('VPBPPlugin')) {
@@ -72,9 +73,6 @@ if (!class_exists('VPBPPlugin')) {
             wp_enqueue_script('plyr');
             wp_enqueue_style('plyr');
         }
-
-        
-          	
 
         /**
          * Parent frame only (admin chrome around the iframe).
@@ -122,5 +120,22 @@ add_filter('block_categories_all', function ($categories, $post) {
     return $categories;
 }, 10, 2);
 
+// Allow uploading WebVTT caption files (.vtt) to the media library so authors
+// can pick subtitle tracks for the Video Player block. WordPress omits this
+// mime type by default, which otherwise blocks the upload.
+add_filter('upload_mimes', function ($mimes) {
+    $mimes['vtt'] = 'text/vtt';
+    return $mimes;
+});
+
+// Ensure .vtt files are correctly identified on upload (real-mime sniffing can
+// report them as plain text/CSV, which fails WP's ext-vs-type security check).
+add_filter('wp_check_filetype_and_ext', function ($data, $file, $filename, $mimes) {
+    if (strtolower(substr($filename, -4)) === '.vtt') {
+        $data['ext']  = 'vtt';
+        $data['type'] = 'text/vtt';
+    }
+    return $data;
+}, 10, 4);
 
 }

@@ -4,7 +4,7 @@ Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, video embed, any video play, video play, Gutenberg block
 Requires at least: 6.5
 Tested up to: 7.0
-Stable tag: 2.0.0
+Stable tag: 2.1.1
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -154,6 +154,12 @@ For installation help click on Installation Tab
 
 
 
+== Source Code ==
+
+The non-minified source code for this plugin is available on our public repository:
+[GitHub Repository](https://github.com/bPlugins/video-player-block-free)
+
+
 == Third-Party Libraries ==
 
 This plugin uses the following third-party libraries:
@@ -169,6 +175,24 @@ This plugin uses the following third-party libraries:
 * License: GPL-2.0-or-later – https://www.gnu.org/licenses/gpl-2.0.html
 * Purpose: Shared utility library providing admin dashboard components and common Gutenberg editor controls.
 * External Services: The library may connect to bPlugins, WordPress.org, and Freemius services for product data and checkout functionality. See full details: https://github.com/bPlugins/bpl-tools#external-requests--why-they-are-made
+
+As the external service functionality is handled by bpl-tools as a third-party library, the following services are utilized:
+
+= bPlugins API =
+
+* **Service URL:** [https://api.bplugins.com](https://api.bplugins.com)
+* **Purpose:** The plugin's admin dashboard fetches product comparison data and pricing information to display relevant upgrade options and feature details.
+* **Data Sent:** Only the plugin slug is transmitted; no personal or site data is collected.
+* **Terms of Service:** [https://bplugins.com/terms-of-service/](https://bplugins.com/terms-of-service/)
+* **Privacy Policy:** [https://bplugins.com/privacy-policy/](https://bplugins.com/privacy-policy/)
+
+= WordPress.org Plugins API =
+
+* **Service URL:** [https://api.wordpress.org/plugins/info/1.2/](https://api.wordpress.org/plugins/info/1.2/)
+* **Purpose:** The admin dashboard queries the official WordPress.org Plugins API to retrieve and display a curated list of other plugins by the same author ("Our Plugins" section).
+* **Data Sent:** Plugin slugs and author name; no personal or site data is collected.
+* **Terms of Service:** [https://wordpress.org/about/tos/](https://wordpress.org/about/tos/)
+* **Privacy Policy:** [https://wordpress.org/about/privacy/](https://wordpress.org/about/privacy/)
 
 
 = Freemius Lite SDK =
@@ -273,16 +297,24 @@ Replace `123` with the ID of the Video Player post you have created via the **Vi
 
 == Changelog ==
 
+= 2.1.1 - 08 Jul 2026 =
+* Add custom aspect ratios.
+* UX Improved.
+* Caption Support.
+* Lazy load controls.
+* Responsive design.
+* Fix some bugs.
+
 = 2.0.0 - 10 Jun 2026 =
 * Add 7 new Pro video blocks: Video Gallery, Video Playlist, Video Lightbox, Video Reels, Video Comparison, Video Testimonial Card, and Video Transcript
 * Add HLS (.m3u8) and DASH (.mpd) streaming support
-* Add Mux video integration and external source support (Amazon S3, Digital Ocean Spaces, BunnyCDN)
+* Add Mux video integration and external source support (Amazon S3, DigitalOcean Spaces, BunnyCDN)
 * Add lazy loading, preloading, and Google Cast / Chromecast support
 * Improve player styling: custom aspect ratios, glassmorphism controls, advanced shadow and border options
 * General performance improvements and bug fixes
 
 = 1.0.6 - 20 Nov 2024 =
-* Fix multiple render issues
+* Fix multiple render issue
 * Add 3 new advanced video player blocks (React, Video.js, Vidstack)
 * Fix build error
 
@@ -293,7 +325,7 @@ Replace `123` with the ID of the Video Player post you have created via the **Vi
 * Not loading the assets where the block is not added
 
 = 1.0.3 - 1 Aug 2023 =
-* Add a translate feature
+* Add translate feature
 
 = 1.0.2 - 1 Jun 2023 =
 * Reduce PHP Code.
