@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Video Player Block
  * Description: A Simple, accessible, Easy to Use & fully Customizable video player. 
- * Version: 2.2.1
+ * Version: 2.3.0
  * Requires PHP: 7.4
  * Requires at least: 6.5
  * Author: bPlugins
@@ -20,11 +20,12 @@ if (!defined('ABSPATH')) {
 }
 
 if (function_exists('vpb_fs')) {
-    vpb_fs()->set_basename(true, __FILE__);
+    // false = this is the free edition (Freemius then deactivates Pro when Free is activated).
+    vpb_fs()->set_basename(false, __FILE__);
 } else {
 
 // Constants
-define('VPBP_PLUGIN_VERSION', (isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] === 'localhost') ? time() : '2.2.1');
+define('VPBP_PLUGIN_VERSION', (isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] === 'localhost') ? time() : '2.3.0');
 define('VPBP_DIR_URL', plugin_dir_url(__FILE__));
 define('VPBP_PUBLIC_DIR', VPBP_DIR_URL . 'public/');
 define('VPBP_DIR_PATH', plugin_dir_path(__FILE__));
@@ -38,6 +39,9 @@ require_once VPBP_DIR_PATH . '/includes/patterns.php';
 
 // One polite, dismissible review request (admins only, after a week).
 require_once VPBP_DIR_PATH . '/includes/review-notice.php';
+
+// Plugins screen: Dashboard, Upgrade, Docs, Support and Rate links on the plugin row.
+require_once VPBP_DIR_PATH . '/includes/plugin-links.php';
 
 // BFCM promotional banner and notice.
 require_once VPBP_DIR_PATH . '/includes/bfcm-notice.php';
@@ -81,7 +85,7 @@ if (!class_exists('VPBPPlugin')) {
 
             // The Freemius opt-in screen hides this plugin's menu until it is answered, so the page below
             // would say "not allowed". Let Freemius show its opt-in first; it opens the first page after.
-            if ( function_exists( 'vpb_fs' ) && vpb_fs()->is_activation_mode() ) {
+            if ( function_exists( 'vpb_fs' ) && ( method_exists( vpb_fs(), 'is_activation_mode' ) ? vpb_fs()->is_activation_mode() : ( ! get_option( 'video-player-block-redirect', false ) || ( isset( $_GET['page'] ) && 'video-player-block-opt-in' === sanitize_text_field( wp_unslash( $_GET['page'] ) ) ) ) ) ) {
                 return;
             }
 

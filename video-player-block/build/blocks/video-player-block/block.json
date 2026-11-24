@@ -60,11 +60,27 @@
       "type": "string",
       "default": "16:9"
     },
+    "videoFit": {
+      "type": "string",
+      "default": "contain"
+    },
+    "posterFit": {
+      "type": "string",
+      "default": "cover"
+    },
+    "posterPosition": {
+      "type": "string",
+      "default": "center"
+    },
     "accentColor": {
       "type": "string",
       "default": ""
     },
     "lazyLoad": {
+      "type": "boolean",
+      "default": false
+    },
+    "providerPlayer": {
       "type": "boolean",
       "default": false
     },

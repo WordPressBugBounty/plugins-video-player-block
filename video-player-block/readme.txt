@@ -2,7 +2,7 @@
 Contributors: bplugins, abuhayat, himur98, freemius
 Tags: video player, video embed, html5 video, youtube video, video block
 Tested up to: 7.1
-Stable tag: 2.2.1
+Stable tag: 2.3.0
 Requires PHP: 7.4
 Requires at least: 6.5
 Donate link: https://www.buymeacoffee.com/abuhayat
@@ -258,6 +258,20 @@ As the external service functionality is handled by bpl-tools as a third-party l
 * **Purpose:** A Gutenberg block for embedding and playing videos with support for YouTube, Vimeo, and self-hosted HTML5 video files. Includes customizable controls, responsiveness, and various playback options.
 
 == Changelog ==
+
+= 2.3.0 - 24 November 2026 =
+* New: Video Fit (Fit / Fill), Poster Fit (Cover / Contain) and Poster Position (Top / Center / Bottom) as picture buttons.
+* New: Caption tracks are a draggable list with copy and delete; adding the first caption file turns the CC button on.
+* New: Live YouTube and Vimeo player in the editor: one click plays or pauses and selects the block; Vimeo quality menu; Lazy Load really defers the video.
+* Improved: A cleaner sidebar organised by importance, one-click Aspect Ratio and size units, new dashboard icons and accent color.
+* Improved: Phone players show the Picture-in-Picture, Download and Restart buttons when you turn them on.
+* Fix: An empty player renders nothing; smaller editor bundle.
+* Fix: The editor and the page now show the same YouTube thumbnail.
+* Fix: YouTube captions stay off in the editor when the setting is off, also on a slow site.
+* Security: Block settings can no longer break out of the block's CSS; the `[video_player id=…]` shortcode only shows Video Player posts; the admin dashboard library is updated.
+* Tweak: The first-time tour only appears where it fits (post editor, admin-only tours for admins).
+* New: Dashboard, Docs, Support and Rate links on the Plugins screen.
+* Fix: Activating Pro now always turns Free off, whichever folder Free is installed in.
 
 = 2.2.1 - 16 November 2026 =
 * Security: Hardened block CSS output and video embed ID handling.
